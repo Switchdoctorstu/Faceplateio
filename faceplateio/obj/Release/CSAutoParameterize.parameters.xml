@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="cloudDBConnectionString-Web.config Connection String" description="cloudDBConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=m28t1gq4so.database.windows.net;Initial Catalog=cloudDB;User ID=stu;Password=Y691hud!!;Connect Timeout=60" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\StuartO\\Documents\\Visual\ Studio\ 2015\\Projects\\faceplateio\\faceplateio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='cloudDBConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="faceplateioContext-Web.config Connection String" description="faceplateioContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=faceplateioContext-20151014190555; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|faceplateioContext-20151014190555.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\StuartO\\Documents\\Visual\ Studio\ 2015\\Projects\\faceplateio\\faceplateio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='faceplateioContext']/@connectionString" />
+  </parameter>
+  <parameter name="cloudDBEntities-Web.config Connection String" description="cloudDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/DataModel1.csdl|res://*/DataModel1.ssdl|res://*/DataModel1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=m28t1gq4so.database.windows.net;initial catalog=cloudDB;user id=stu;password=Y691hud!!;connect timeout=60;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\StuartO\\Documents\\Visual\ Studio\ 2015\\Projects\\faceplateio\\faceplateio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='cloudDBEntities']/@connectionString" />
+  </parameter>
+</parameters>

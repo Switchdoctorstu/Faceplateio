@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="cloudDB" Class="MyDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=m28t1gq4so.database.windows.net;Initial Catalog=cloudDB;User ID=stu;Connect Timeout=60" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="cloudDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Accounts" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Userid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="IPV6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Devices" Member="Devices">
+    <Type Name="Device">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IPV6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Account" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Messages" Member="Messages">
+    <Type Name="Message">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Msg" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Owners" Member="Owners">
+    <Type Name="Owner">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IPV6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Account" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Steps" Member="Steps">
+    <Type Name="Step">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Account" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Label" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Operand" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Operant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Data" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="EQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[NULL]" Member="NULL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Buttons" Member="Buttons">
+    <Type Name="Button">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Script" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Timer" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Scripts" Member="Scripts">
+    <Type Name="Script">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Wait_Delay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Wait_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Exit_Wait" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Next_Button" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Wait_Confirm" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
